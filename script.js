@@ -14,7 +14,7 @@ const cardTexts = [
 ];
 
 // Mảng chứa số của các lá bài có đáp án đúng
-const correctAnswers = [1, 2, 3, 4, 5, 6, 7,];
+const correctAnswers = [1, 3, 5, 7, 9, 11];
 
 // Tạo bộ bài 12 lá với số từ 1 đến 12
 const cards = Array.from({ length: 12 }, (_, i) => ({
@@ -91,7 +91,9 @@ function calculateScore() {
   // So sánh các lá bài đã lật với đáp án đúng
   flippedCards.forEach(cardNumber => {
     if (correctAnswers.includes(cardNumber)) {
-      score++;
+      score++;  // Cộng 1 điểm nếu đúng
+    } else {
+      score--;  // Trừ 1 điểm nếu sai
     }
   });
 
