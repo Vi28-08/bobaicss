@@ -85,7 +85,7 @@ input[type="text"] {
 }
 
 .card-back {
-  background-color: #97e1ee;
+  background-color: #fff;
   transform: rotateY(180deg);
 }
 
