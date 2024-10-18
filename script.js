@@ -27,10 +27,12 @@ let flippedCards = []; // Để theo dõi các lá bài đã lật
 // Hàm tạo HTML cho các lá bài
 function createCardHTML(card) {
   return `
-    <div class="card" data-number="${card.number}">
-      <div class="card-inner">
-        <div class="card-front">?</div>
-        <div class="card-back">${cardTexts[card.number - 1]}</div>
+    <div class="card-container">
+      <div class="card" data-number="${card.number}">
+        <div class="card-inner">
+          <div class="card-front">?</div>
+          <div class="card-back">${cardTexts[card.number - 1]}</div>
+        </div>
       </div>
       <div class="card-number">Số: ${card.number}</div> <!-- Hiển thị số thứ tự cố định -->
     </div>
