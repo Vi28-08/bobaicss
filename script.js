@@ -14,7 +14,7 @@ const cardTexts = [
 ];
 
 // Mảng chứa số của các lá bài có đáp án đúng
-const correctAnswers = [1, 3, 5, 7, 9, 11];
+const correctAnswers = [1, 3, 5, 7, 2, 4, 6];
 
 // Tạo bộ bài 12 lá với số từ 1 đến 12
 const cards = Array.from({ length: 12 }, (_, i) => ({
@@ -30,8 +30,9 @@ function createCardHTML(card) {
     <div class="card" data-number="${card.number}">
       <div class="card-inner">
         <div class="card-front">?</div>
-        <div class="card-back">${cardTexts[card.number - 1]}</div> <!-- Hiển thị văn bản -->
+        <div class="card-back">${cardTexts[card.number - 1]}</div>
       </div>
+      <div class="card-number">#${card.number}</div> <!-- Hiển thị số thứ tự phía dưới -->
     </div>
   `;
 }
