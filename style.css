@@ -102,6 +102,13 @@ input[type="text"] {
 .card.correct .card-back {
   background-color: rgb(157, 238, 191); /* Đổi màu cho đáp án đúng */
 }
+.card-number {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #555;
+  font-weight: bold;
+}
 
 /* Định dạng cho các nút */
 .button-container {
