@@ -6,11 +6,11 @@ const playerNameInput = document.getElementById('playerName');
 
 // Mảng chứa văn bản tương ứng với các số từ 1 đến 12
 const cardTexts = [
-  '3 cách thiết lập', 'Định dạng nội dung', 'Tái sử dụng', 
-  'Độc lập với HTML', 'Cascading Style Sheets', 
+  'Cascading Style Sheets', 'HyperText Markup Language', 'Tái sử dụng', 
+  'Độc lập với HTML', '3 cách thiết lập', 
   'Bộ chọn {thuộc tính: giá trị;}', 'Style="thuộc tính: giá trị;"', 
   'Ngôn ngữ lập trình', 'Phải viết trong thẻ HTML', 
-  'HyperText Markup Language', 'Giúp trang web có tương tác', '!DOCTYPE html'
+  'Định dạng giao diện', 'Giúp trang web có tương tác', '!DOCTYPE html'
 ];
 
 // Mảng chứa số của các lá bài có đáp án đúng
@@ -25,26 +25,22 @@ const cards = Array.from({ length: 12 }, (_, i) => ({
 let flippedCards = []; // Để theo dõi các lá bài đã lật
 
 // Hàm tạo HTML cho các lá bài
-function createCardHTML(card) {
+function createCardHTML(card, index) {
   return `
     <div class="card" data-number="${card.number}">
       <div class="card-inner">
         <div class="card-front">?</div>
         <div class="card-back">${cardTexts[card.number - 1]}</div>
       </div>
+      <div class="card-number">Số: ${index + 1}</div>
     </div>
   `;
 }
 
-// Hàm trộn bài ngẫu nhiên
-function shuffleCards() {
-  return cards.sort(() => Math.random() - 0.5);
-}
-
 // Hàm hiển thị bài lên giao diện
 function displayCards() {
-  deck.innerHTML = shuffleCards()
-    .map(card => createCardHTML(card))
+  deck.innerHTML = cards
+    .map((card, index) => createCardHTML(card, index))
     .join('');
 
   // Reset mảng flippedCards
@@ -76,6 +72,10 @@ function showCorrectAnswers() {
     // Nếu là đáp án đúng, thêm class 'correct'
     if (correctAnswers.includes(cardNumber)) {
       card.classList.add('correct');
+      card.querySelector('.card-back').innerText += ' (Đúng)';
+    } else {
+      card.classList.add('incorrect');
+      card.querySelector('.card-back').innerText += ' (Sai)';
     }
   });
 
@@ -109,3 +109,4 @@ showAnswerBtn.addEventListener('click', showCorrectAnswers);
 
 // Hiển thị bài lần đầu tiên
 displayCards();
+
