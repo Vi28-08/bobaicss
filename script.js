@@ -32,10 +32,25 @@ function createCardHTML(card) {
         <div class="card-front">?</div>
         <div class="card-back">${cardTexts[card.number - 1]}</div>
       </div>
-      <div class="card-number">#${card.number}</div> <!-- Hiển thị số thứ tự phía dưới -->
     </div>
   `;
 }
+
+// Hàm tạo thứ tự mặc định từ 1 đến 12 bên dưới các lá bài
+function createCardOrder() {
+  const orderContainer = document.createElement('div');
+  orderContainer.classList.add('order-container');
+
+  cards.forEach(card => {
+    const orderItem = document.createElement('div');
+    orderItem.classList.add('order-item');
+    orderItem.innerText = `#${card.number}`;
+    orderContainer.appendChild(orderItem);
+  });
+
+  deck.appendChild(orderContainer);
+}
+
 
 // Hàm trộn bài ngẫu nhiên
 function shuffleCards() {
@@ -67,6 +82,8 @@ function displayCards() {
       }
     });
   });
+    // Tạo thứ tự mặc định dưới các lá bài
+  createCardOrder();
 }
 
 // Hàm hiển thị đáp án đúng và tính điểm
