@@ -32,9 +32,11 @@ function createCardHTML(card) {
         <div class="card-front">?</div>
         <div class="card-back">${cardTexts[card.number - 1]}</div>
       </div>
+      <div class="card-number">Số: ${card.number}</div> <!-- Hiển thị số thứ tự cố định -->
     </div>
   `;
 }
+
 
 // Hàm trộn bài ngẫu nhiên
 function shuffleCards() {
