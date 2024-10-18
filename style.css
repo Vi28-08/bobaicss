@@ -49,6 +49,16 @@ input[type="text"] {
   border-radius: 5px;
   outline: none;
 }
+/* CSS cho ảnh góc trang */
+.bottom-image {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 100px; /* Điều chỉnh kích thước ảnh */
+  height: auto;
+  z-index: 1000; /* Đảm bảo ảnh luôn nổi lên trên các phần tử khác */
+}
+
 
 /* CSS cho bộ bài */
 .deck {
