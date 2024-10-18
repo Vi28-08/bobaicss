@@ -14,7 +14,7 @@ const cardTexts = [
 ];
 
 // Mảng chứa số của các lá bài có đáp án đúng
-const correctAnswers = [1, 3, 5, 7, 2, 4, 6];
+const correctAnswers = [1, 3, 5, 7, 10, 4, 6];
 
 // Tạo bộ bài 12 lá với số từ 1 đến 12
 const cards = Array.from({ length: 12 }, (_, i) => ({
