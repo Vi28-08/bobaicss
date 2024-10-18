@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trò Chơi Thẻ</title>
-    <link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trò chơi tìm lá bài CSS  </title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Trò Chơi Thẻ</h1>
-        <input type="text" id="playerName" placeholder="Nhập tên bạn" />
-        <div id="scoreDisplay">Điểm: 0</div>
-        <div id="deck" class="deck"></div>
-        <button id="shuffleBtn">Trộn Bài</button>
-        <button id="showAnswerBtn">Hiển Thị Đáp Án</button>
-        <img id="cornerImage" src="qr.jpg" alt="QR" />
 
+  <div class="game-container">
+    <h1>Trò chơi tìm lá bài CSS </h1>
+    
+    <div class="player-name-input">
+      <label for="playerName">Tên người chơi:</label>
+      <input type="text" id="playerName" placeholder="Nhập tên của bạn">
     </div>
-    <script src="script.js"></script>
+
+    <div id="deck" class="deck"></div>
+    
+    <div class="button-container">
+      <button id="shuffleBtn">Trộn Bài</button>
+      <button id="showAnswerBtn">Hiển thị đáp án</button> <!-- Nút để hiển thị đáp án đúng -->
+    </div>
+
+    <div id="scoreDisplay" class="score-display"></div> <!-- Hiển thị số điểm -->
+  </div>
+  <img id="cornerImage" src="qr.png" alt="QR" />
+
+  <script src="script.js"></script>
+
 </body>
 </html>
